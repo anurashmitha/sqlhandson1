@@ -13,41 +13,33 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 mysql>create database mysqlhandson;
 mysql> use mysqlhandson;
 Database changed
-mysql> show tables;
-+------------------------+
-| Tables_in_mysqlhandson |
-+------------------------+
-| books                  |
-| customer               |
-| programmer             |
-+------------------------+
-3 rows in set (0.15 sec)
-
-
-
 
 mysql>( EmpNo numeric(5) not null, ProjId numeric(5) not null,
  LastName varchar(30) , FirstName varchar(30),
   HireDate DATE, Language varchar(15),
   TaskNo numeric(2), Privilege varchar(25));
-mysql> INSERT  INTO  PROGRAMMER              VALUES(201,'Gupta','Saurav','01/01/95','NPR','VB',52,'Secret');
-INSERT  INTO  PROGRAMMER VALUES(390,'Ghosh','Pinky','01/05/93','KCW','Java',11,'Top Secret');
+mysql> INSERT  INTO  PROGRAMMER              VALUES(201,'gupta','saurav','01/01/95','NPR','VB',52,'Secret');
+INSERT  INTO  PROGRAMMER VALUES(390,'Ghosh','pinky','01/05/93','KCW','Java',11,'Top Secret');
 INSERT  INTO  PROGRAMMER VALUES(789,'Agarwal','Praveen','08/31/98','VB','RNC',11,'Secret');
 INSERT  INTO  PROGRAMMER VALUES(134,'Chaudhury','Supriyo','07/15/95','TIPPS','C++',52,'Secret');
 INSERT  INTO  PROGRAMMER VALUES(896,'Jha','Ranjit','06/15/97','KCW','Java',10,'Top Secret');
 INSERT  INTO  PROGRAMMER VALUES(345,'John','Peter','11/15/99','KCW','Java',52,null);
 
 
-
-mysql> SELECT * FROM PROGRAMMER;
+1Q.mysql>UPDATE PROGRAMMER SET ProjID="NITTS",Language="C++" where FirstName="saurav";
+2Q.mysql>UPDATE BOOKS SET SHELFNO="S10" WHERE TITLE="DBMS";
+3Q.mysql>DELETE FROM PROGRAMMER WHERE FirstName="Supriyo" and LastName="Chaudhury";
+4Q.mysql>ALTER TABLE WETHER ADD COLUMN Nature char(15);
+5Q.mysql>DROP table WEATHER;
+6Q.mysql> SELECT * FROM PROGRAMMER;
 +-------+--------+----------+-----------+------------+----------+--------+--------------+
 | EmpNo | ProjID | LastName | FirstName | HireDate   | Language | TaskNo | privilege    |
 +-------+--------+----------+-----------+------------+----------+--------+--------------+
 |   201 | NITTS  | guptha   | saurav    | 1995-01-01 | C++      |     52 | Secret       |
 |   390 | KCW    | Ghosh    | pinky     | 1993-01-05 | Java     |     11 | Top Secret   |
 |   789 | rnc    | Agarwal  | Praveen   | 1998-08-31 | VB       |     11 | Secret       |
-|   896 | KCW    | JHA      | RANJIT    | 1997-06-15 | JAVA     |     10 | TOP Secret   |
-|   345 | TIPPS  | JOHN     | PETER     | 1999-11-15 | JAVA     |     52 | NULL         |
+|   896 | KCW    | Jha      | RANJIT    | 1997-06-15 | JAVA     |     10 | TOP Secret   |
+|   345 | TIPPS  | John     | Peter     | 1999-11-15 | JAVA     |     52 | NULL         |
 |   563 | NITTS  | ANDERSON | ANDY      | 1994-08-15 | C++      |     89 | CONFIDENTIAL |
 +-------+--------+----------+-----------+------------+----------+--------+--------------+
 6 rows in set (0.08 sec)
@@ -69,8 +61,7 @@ mysql> SELECT * FROM BOOKS;
 
 
 
-
-//////////////       SECOND HALF     /////////////
+-----------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
